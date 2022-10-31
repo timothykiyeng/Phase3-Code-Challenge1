@@ -17,5 +17,21 @@ class Magazine
     magazine_articles.collect{|article| article.author}.uniq
   end
 
+  def self.find_by_name(name)
+    find_magazines = self.all.select { |magazine| magazine.name == name}
+    find_magazines.first
+  end
+
+  def article_titles
+    magazine_articles.collect{|article| article.title}
+  end
+
+  def contributing_authors
+    main_authors = []
+    #tally authors then map through the articles and get array of authors
+    magazine_authors = magazine_articles.collect{|article| article.author}.uniq
+    magazine_authors.tally.each {|key, value|  values > 2 && (main_authors << key)}
+    main_authors
+  end
 
 end
