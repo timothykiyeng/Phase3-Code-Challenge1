@@ -6,25 +6,24 @@ end
 
 
 ###  WRITE YOUR TEST CODE HERE ###
-transcription_tips=Author.new("Timothy")
-outlook=Magazine.new("outlook1","fashion")
-forbes=Magazine.new("forbes","money")
-nation=Magazine.new("nation","business")
-art1=Article.new(art1,outlook,"title_one")
-art2=Article.new(art1,outlook,"title_two")
-transcription_tips.add_article(outlook,"title_three")
-transcription_tips.add_article(outlook,"title_four")
-transcription_tips.add_article(outlook,"title_five")
-transcription_tips.add_article(forbes,"title_six")
-transcription_tips.add_article(nation,"title_seven")
+author_1= Author.new("Timothy")
+author_2 = Author.new('James')
+author_3 = Author.new('Jim')
 
+magazine_1=Magazine.new("outlook1","fashion")
+magazine_2=Magazine.new("forbes1","money")
+magazine_3=Magazine.new("nation2","business")
 
+art1=Article.new(author_2,magazine_1,"title_one")
+art2=Article.new(author_3,magazine_2,"title_two")
+art3=Article.new(author_1,magazine_3,"title_three")
+art4=Article.new(author_2,magazine_3, "title_four")
 
-
-
-
-
-
+author_2.add_article(magazine_1,"title_three")
+author_1.add_article(magazine_2,"title_four")
+author_3.add_article(magazine_3,"title_five")
+# author_2.add_article(forbes,"title_six")
+# author_2.add_article(nation,"title_seven")
 
 ### DO NOT REMOVE THIS
 binding.pry

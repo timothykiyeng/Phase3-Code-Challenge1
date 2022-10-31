@@ -12,7 +12,7 @@ class Magazine
   def self.all
     @@all
   end
-  
+
      ##helper function
   def magazine_articles
     Article.all.select{|article| article.magazine.name == self.name}
@@ -32,11 +32,9 @@ class Magazine
   end
 
   def contributing_authors
-    main_authors = []
     #tally authors then map through the articles and get array of authors
-    magazine_authors = magazine_articles.collect{|article| article.author}.uniq
-    magazine_authors.tally.each {|key, value|  values > 2 && (main_authors << key)}
-    main_authors
+    magazine_authors = magazine_articles.collect{|article| article.author.name}
+    magazine_authors.tally.each {|key, value|  value > 2}
+    magazine_authors
   end
-
 end
